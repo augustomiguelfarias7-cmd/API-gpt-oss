@@ -1,22 +1,13 @@
-# cliente_gpt_oss_internet.py
-import requests
+# API-gpt-oss
 
-# Substitua pelo IP público ou URL do VPS/Render
-API_URL = "http://SEU_IP_OU_URL:5000/api/chat"
+Este repositório agora inclui um mini jogo em Python chamado **Jogo de Depopular**,
+com personagens engraçados e outros que "não servem para nada" 😄.
 
-def chamar_gpt_oss(prompt, modelo="gpt_oss_120b"):
-    payload = {"model": modelo, "prompt": prompt}
-    try:
-        response = requests.post(API_URL, json=payload)
-        if response.status_code == 200:
-            return response.json()["resposta"]
-        else:
-            return f"Erro {response.status_code}: {response.text}"
-    except Exception as e:
-        return f"Falha na requisição: {e}"
+## Como executar
 
-# === Exemplo de uso ===
-if __name__ == "__main__":
-    prompt = "Explique aprendizado de máquina de forma simples."
-    print("GPT-OSS 20B:", chamar_gpt_oss(prompt, "gpt_oss_20b"))
-    print("GPT-OSS 120B:", chamar_gpt_oss(prompt, "gpt_oss_120b"))
+```bash
+python3 jogo_depopular.py
+```
+
+Durante o jogo, você escolhe qual personagem será "depopularizado" até restar
+apenas um campeão.
